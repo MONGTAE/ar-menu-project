@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AR Food Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-bg: #fdf8f2;
+      --primary-text: #1f1f1f;
+      --accent: #d75241;
+      --light-gray: #f3e6dc;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--primary-bg);
+      color: var(--primary-text);
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background-color: var(--light-gray);
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary-text);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #555;
+    }
+
+    .intro-image {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      animation: scaleUp 1.5s ease-out;
+    }
+
+    .categories {
+      display: none;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 60px 20px;
+      gap: 30px;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    .categories.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .category {
+      text-align: center;
+      width: 230px;
+      padding: 30px 20px;
+      background-color: var(--light-gray);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .category:hover {
+      transform: translateY(-8px);
+      background-color: #fff;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    .category img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 2px solid var(--accent);
+    }
+
+    .category h3 {
+      font-size: 1.4rem;
+      margin: 10px 0;
+      color: var(--accent);
+    }
+
+    .category p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .footer {
+      text-align: center;
+      background-color: #fafafa;
+      padding: 30px 0;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 60px;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #999;
+    }
+
+    .chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent);
+      color: white;
+      padding: 14px 16px;
+      border-radius: 50%;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    .chatbot-button:hover {
+      background-color: #c04133;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes scaleUp {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    header, .footer {
+      animation: fadeIn 1.4s ease;
+    }
+
+    @media screen and (max-width: 768px) {
+      .categories {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .category {
+        width: 80%;
+      }
+
+      .intro-image {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AR Food Menu</h1>
+    <p>Experience your food before you order — in 3D Augmented Reality.</p>
+    <button id="explore-btn" style="background-color: #d75241; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; margin-top: 20px; cursor: pointer; transition: background-color 0.3s ease;">
+      Explore Now
+    </button>
+    <img src="https://via.placeholder.com/500x300" alt="3D AR Food Experience" class="intro-image">
+  </header>
+
+  <section class="categories" id="categories">
+    <div class="category" onclick="location.href='appetizers.html'">
+      <img src="https://via.placeholder.com/100" alt="Appetizers">
+      <h3>Appetizers</h3>
+      <p>Kickstart your meal with flavors that excite your senses.</p>
+    </div>
+
+    <div class="category" onclick="location.href='main-courses.html'">
+      <img src="https://via.placeholder.com/100" alt="Main Courses">
+      <h3>Main Courses</h3>
+      <p>Rich, hearty, and designed to impress your taste buds.</p>
+    </div>
+
+    <div class="category" onclick="location.href='desserts.html'">
+      <img src="https://via.placeholder.com/100" alt="Desserts">
+      <h3>Desserts</h3>
+      <p>Sweet, creamy, and dreamy finishes to your meal.</p>
+    </div>
+
+    <div class="category" onclick="location.href='beverages.html'">
+      <img src="https://via.placeholder.com/100" alt="Beverages">
+      <h3>Beverages</h3>
+      <p>Hydrate or celebrate with our drink selections.</p>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>© 2025 AR Food Menu — Designed with ❤️ by Mugila, Arthi & Deepika</p>
+  </div>
+
+  <!-- Chatbot Button -->
+<button class="chatbot-button" id="chatbotBtn">💬</button>
+
+<!-- Chatbot Container with iframe -->
+<div id="chatbotContainer" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; background: white; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.2); z-index: 9999; overflow: hidden;">
+  <div style="padding: 10px; background: #d75241; color: white; font-weight: bold; display: flex; justify-content: space-between; align-items: center;">
+    <span>Chat with us</span>
+    <button onclick="closeChatbot()" style="background: none; border: none; color: white; font-size: 18px; cursor: pointer;">✖</button>
+  </div>
+  <iframe src="chatbot.html" style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+
+  <script>
+    document.getElementById("explore-btn").addEventListener("click", () => {
+      document.getElementById("categories").classList.add("show");
+      document.getElementById("explore-btn").style.display = "none";
+    });
+
+    function openChatbot() {
+      alert("Chatbot button clicked! You can link this to a real chatbot or embed a widget.");
+      // Example: location.href = 'chatbot.html';
+    }
+    document.getElementById("chatbotBtn").addEventListener("click", () => {
+  const chatbot = document.getElementById("chatbotContainer");
+  chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+});
+
+function closeChatbot() {
+  document.getElementById("chatbotContainer").style.display = "none";
+}
+
+  </script>
+
+</body>
+</html>

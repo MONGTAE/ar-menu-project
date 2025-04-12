@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AR Food Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8f4fc, #f3e8ff);
+    }
+  </style>
+</head>
+
+<body class="text-gray-800">
+  <header class="bg-white shadow-md p-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-purple-700">🍽️ AR Food Menu</h1>
+    <a href="#" class="bg-purple-600 text-white px-4 py-2 rounded-xl shadow hover:bg-purple-700 transition">Scan QR</a>
+  </header>
+
+  <section class="text-center mt-10 px-4">
+    <p class="text-lg text-gray-600 mb-4">Use your phone to explore dishes in 3D, interact with our AI chatbot, and order like a pro!</p>
+    <a href="#" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full text-lg font-medium shadow-lg hover:scale-105 transition">Launch AR Menu</a>
+  </section>
+
+  <section class="mt-16 max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Scan QR" class="w-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold mb-2 text-purple-700">Scan QR</h3>
+      <p class="text-gray-600">Just scan the QR on your table to launch the interactive AR menu.</p>
+    </div>
+
+    <a href="ar-menu.html" class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition block">
+      <img src="https://cdn-icons-png.flaticon.com/512/3296/3296512.png" alt="View in AR" class="w-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold mb-2">View 3D Models</h3>
+      <p class="text-gray-600">Get a realistic AR view of each dish in 3D before you decide to order.</p>
+    </a>
+    
+
+    <!-- Smart Chatbot - Now Clickable -->
+    <a href="chatbot.html" class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition block hover:scale-105">
+      <img src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" alt="Chatbot" class="w-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold mb-2 text-purple-600">Smart Chatbot</h3>
+      <p class="text-gray-600">Get recommendations and ask questions from our smart AI food bot.</p>
+    </a>
+  </section>
+
+  <footer class="text-center mt-20 text-gray-500 text-sm py-6">
+    © 2025 AR Food Menu — Built with 💜 by Mugila, Arthi & Deepika
+  </footer>
+</body>
+
+</html>
